@@ -46,7 +46,7 @@ Let us look at the meaning of each of the parts of this command.
   <TabItem value="terminal">
 
 ```
-docker run --rm -it -v ${PWD}:/home --entrypoint=/usr/local/bin/python cyt
+docker run --rm -it -v ${PWD}:/home cyt python
 ```
 Let us look at the meaning of each of the parts of this command.
 
@@ -55,8 +55,8 @@ Let us look at the meaning of each of the parts of this command.
 <li><code>--rm</code> This instructs Docker to remove the container once it is closed. Since the url used to access JupyterLab changes every time there is generally no point in restarting the container once it is stopped.</li>
 <li><code>-it</code> This specifies that we will be running an interactive session.</li>
 <li><code>-v $&#123;PWD&#125;:/home</code> This is used to mount the current directory into the <code>/home</code> directory of the container. <code>$&#123;PWD&#125;</code> can be changed to a different directory, but the full path needs to be specified.</li>
-<li><code>--entrypoint=/usr/local/bin/python</code> This is used so that Python is started instead of JupyterLab, which is the default option. It is sometimes useful to use <code>--entrypoint=/bin/bash</code> to be dropped into a bash terminal in the container.</li>
 <li><code>cyt</code> Indicates the name of the image, which in this case is cyt.</li>
+<li><code>python</code> This is used so that Python is started instead of JupyterLab, which is the default option. It is sometimes useful to use <code>bash</code> to be dropped into a bash terminal in the container.</li>
 </ul>
 
   </TabItem>
